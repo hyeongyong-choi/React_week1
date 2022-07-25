@@ -1,0 +1,27 @@
+.todo {
+  width: 230px;
+  height: 150px;
+  border: 1px seagreen solid;
+  padding : 10px ;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+.todo > button{
+    width: 80px;
+    height: 30px;
+    margin-right: 10px;
+    background-color: white;
+    border-radius: 10px;;
+
+}
+.todo > h3{
+    margin-top: 10px;
+}
+
+.delete{
+    border: 1px solid red;
+}
+
+.complate{
+    border: 1px solid green;
+}

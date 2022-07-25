@@ -1,0 +1,10 @@
+.float {
+    display: flex;
+    justify-content: space-between;
+    
+}
+.float > h3{
+    margin: 20px 20px;
+    text-align: center;
+}
+
