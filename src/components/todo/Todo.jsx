@@ -4,24 +4,52 @@ import './style.css';
 
 
 
-function Todo({title, content, done, setContent, setTodos}) {
+function Todo({ title, content, done, setContent, todos, setTodos, id }) {
+
+
+    const onRemove = (id) => {
+        let del = todos.filter((todo) => todo.id !== id);
+        setTodos(del);
+        // console.log(del)
+    }
+
+    const onComplate = (id) => {
+        let com = todos.map((todo) => {
+            if (todo.id == id) {
+                todo.done = !todo.done
+            }
+
+            console.log(todo.done)
+            return todo
+        })
+        // if(done = true){
+        //     setText('취소하기')
+        // }else{
+        //     setText('완료하기')
+        // };
+
+        setTodos(com) 
+    }
 
     return (
-        <div>
+ 
+
+            <div >
                 <div className='todo'>
                     <h3>{title}</h3>
                     <p>{content}</p>
-                    <button className='delete'>삭제하기</button>
-                    <button className='complate'>완료</button>
+                    <button className='remove' onClick={() => { onRemove(id) }}>삭제하기</button>
+                    <button className='complate' onClick={() => { onComplate(id) }}> {done ? '취소하기' : '완료하기'} </button>
                 </div>
+            </div>
 
-        </div>
+
     )
+
+
+
 }
-{/* <h3>리액트 공부하기</h3>
-            <p>리액트 기초를 공부해봅시다</p>
-            <button className='delete'>삭제하기</button>
-            <button className='complate'>완료</button> */}
+
 
 export default Todo
 

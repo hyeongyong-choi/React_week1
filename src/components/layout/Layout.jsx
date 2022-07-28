@@ -7,25 +7,34 @@ import './style.css';
 import { useState } from 'react';
 
 function Layout() {
+    
+
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
-    const [todos, setTodos] = useState([
-        {
-            id: 1,
-            title: "공부하기",
-            content:"리액트",
-            done : 0
-            
-        },
-    ]);
+    const [todos, setTodos] = useState([]);
 
 
+
+    const addlist = () =>{
+    const todoslist = {
+                    id: todos.length,
+                    title: title,
+                    content:content,
+                    done : false
+                }
+
+    setTodos(()=> [todoslist])
+     
+}
+
+    
+    
     return (
         
         <div className='container'>
             <Header/>
-            <Form title={title} content={content} todos={todos} setTitle={setTitle} setContent={setContent} setTodos={setTodos} />
-            <List title={title} content={content} todos={todos} setTitle={setTitle} setContent={setContent} setTodos={setTodos} />
+            <Form title={title} content={content} todos={todos} setTitle={setTitle} setContent={setContent} setTodos={setTodos} addlist={addlist}/>
+            <List title={title} content={content} todos={todos} setTitle={setTitle} setContent={setContent} setTodos={setTodos}/>
         </div>
     )
 }
