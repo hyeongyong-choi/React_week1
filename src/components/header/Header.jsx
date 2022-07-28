@@ -5,7 +5,7 @@ function App(){
 
     return (
         <div className ='float'>
-            <h3>My Todo List</h3>
+            <h3>My ToDo List</h3>
             <h3>React</h3>
         </div>
     )

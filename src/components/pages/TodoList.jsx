@@ -3,7 +3,7 @@ import Layout from '../layout/Layout'
 
 const TodoList = () => {
   return (
-    <Layout>TodoList</Layout>
+    <Layout>ToDoList</Layout>
   )
 }
 
